@@ -278,5 +278,28 @@ Exercice
 bulletin d'une classe
 clé associative ==> nom et prénom
 
+```
 HashMap <String[], int> bulletin = new HashMap();
 bulletin.put(new String[]{"Didier","Caillou"}, 18);
+```
+
+
+==================================================================
+
+Java: Generating a random char (a-z)
+A random character between 'a' and 'z':
+```
+Random rnd = new Random();
+char c = (char) ('a' + rnd.nextInt(26));
+A random character from a string of characters:
+
+String chars = "abcxyz";
+Random rnd = new Random();
+char c = chars.charAt(rnd.nextInt(chars.length()));
+```
+
+
+
+
+
+
