@@ -1,0 +1,480 @@
+https://www.mindprod.com/jgloss/modulus.html#FLOATINGPOINT
+
+
+
+Algortihme Inversion de Variables
+
+Variables A, B, TEMP : Entiers
+
+DEBUT
+	Lire(A)
+	Lire(B)
+	Ecrire("A vaut", A)
+	Ecrire("B vaut", B)
+
+	TEMP 	<-	B
+	B 	<-	A
+	A	<-	TEMP
+
+	Ecrire("A vaut", A)
+	Ecrire("B vaut", B)
+	
+FIN
+
+autre manière de faire
+A = 5
+B = 7
+
+A = 5 + 7
+B = 7
+
+B = A - B = (5 + 7) - 7 = 5
+A = A - B = 7
+===========================================
+
+Considérons A = 3, B = 9, C = Faux, D = NON (C). Donnez le résultat pour chacune de ces
+instructions :
+Notation pseudo-code
+1. (A > 8)		FAUX
+2. (B = 9)		VRAI
+3. NON(A ≠ 3)		VRAI
+4. NON(C)		VRAI
+5. (A < B) OU C		VRAI
+6. NON((A + B) ≠ 12)	VRAI
+7. ((B = 5) OU ( (c > 10) ET (a < 8) ))		FAUX
+8. (((b = 5) OU ((c > 10) ET (a < 8))) OU (A < B) OU C) ET C	FAUX	
+Notation C#
+1. A != 3	FAUX
+2. !(D) || C	FAUX
+3. ((A + B) == 12) && D		VRAI
+
+==========================================
+
+Les structures conditionnelles
+1. Année bissextile (Pseudo-Code + C#)
+
+Réaliser un petit algorithme qui sur base d’une année donnée va déterminer s’il s’agit d’une année
+bissextile. Une année est bissextile si elle est divisible par 4, mais non divisible par 100. Ou si elle est
+divisible par 400.
+
+VARIABLE ANNNEE : ENTIER
+
+DEBUT
+
+	LIRE(ANNEE)
+	SI ( ([ANNEE mod4 = 0] ET [ANNEE mod100 != 0]) OU (ANNEE modulo 400 = 0))
+		AFFICHER (ANNEE " EST UNE ANNEE BISSEXTILE" )
+	SINON
+		AFFICHER (ANNEE " N'EST PAS UNE ANNEE BISSEXTILE" )
+
+FIN
+
+
+2. Lanceur de balles de tennis (Pseudo-Code)
+
+Réaliser l’algorithme d’un lanceur de balles de tennis. Ce lanceur possède deux états :
+
+● prêt : permet de savoir si le tennisman est prêt. Il ne faut pas lancer de balles dans le
+cas contraire
+
+● panierVide : permet de savoir s’il y a encore des balles disponibles
+
+Le lanceur de balle possède l’opération « lancerBalle » qui, vous l’aurez compris, permet de lancer
+une balle.
+
+
+pret,panierVide : BOOLEAN
+
+
+SI(pret = 1 et panierVide = 0)
+	ACTION(lancerBalle)
+SINON
+	*ne rien faire*
+
+
+3. Distributeur de boissons (Pseudo-Code)
+Réaliser l’algorithme d’un distributeur de boissons. Ce dernier propose plusieurs boissons et
+l’utilisateur choisit celle qu’il désire en entrant le numéro correspondant. Ne pas oublier pas de
+vérifier s’il y a encore des boissons en stock.
+
+Boisson1 = 1, Boisson2 = 2, ... BoissonN = N; choix : entiers positifs 
+
+DEBUT
+	(tableau)
+	Boisson1 = 1
+	Quantite1 = 
+	Boisson2 = 2
+	quantite2 = 
+	...
+	BoissonN = N
+	quantiteN =
+
+	Afficher(Boisson et numero)
+	Utilisateur( choisit sa boisson et défini la variable choix ==> recupere son choix)
+	choix = numero choisit
+	
+	CORRESPONDANCE(boisson, choix)
+	SI(stock non vide) 
+		+ donner boisson correspondant au numero choisit
+		+ reduire stock correspondat de 1
+	SINON
+		+ afficher que la boisson choisie nest pas en stock
+		+ demander de choisir une autre boisson
+
+FIN
+
+
+
+
+
+
+
+4. Calculatrice (Pseudo-Code + C#)
+Réaliser l’algorithme d’une calculatrice basique. L’utilisateur est invité à saisir un nombre, un
+opérateur, et un deuxième nombre. La calculatrice affiche ensuite le résultat.
+
+premierNombre, deuxiemeNombre, resultat 	: entier
+operateur					: caractere
+
+DEBUT 
+
+Lire(premierNombre, deuxiemeNombre, operateur)
+
+SI (operateur = '+')
+	resultat = premierNombre + deuxiemeNombre	
+SINON SI (operateur = '-')
+	resultat = premierNombre - deuxiemeNombre
+SINON SI (operateur = '*')
+	resultat = premierNombre * deuxiemeNombre
+	/////////////////////////////////////////
+	while(deuxiemeNombre != 0)
+		resultat = resultat + premierNombre
+		deuxiemeNombre = deuxiemeNombre - 1 
+SINON
+	resultat = premierNombre / deuxiemeNombre
+
+AFFICHER RESULTAT
+
+
+FIN
+
+5. Différence entre deux durées
+À l'aide de l'algorithme convertisseur de seconde, réaliser un algorithme faisant la différence entre
+deux durées (exprimées en jours, heures, minutes, secondes).
+
+
+
+DEBUT
+
+duree1 = jours1 * 86400 + heures1 * 3600 + minutes1 * 60 + secondes1
+duree2 = jours2 * 86400 + heures2 * 3600 + minutes2 * 60 + secondes2
+
+(sauf exception) comparer et faire la plus grand moins la petite 
+
+totalSecondes = duree1 - duree2
+
+jours = totalSecondes/86400
+heures = (totalSecondes % 86400) / 3600
+minutes = ((totalSecondes % 86400) % 3600) / 60
+secondes = totalSecondes % 60
+
+FIN
+
+=====================================================================================================================
+
+Les structures itératives
+
+
+1. À l’aide d’une boucle, afficher la table de multiplication par 2. Ensuite, coder votre algorithme
+en C#.
+
+
+multiple : entier
+
+DEBUT
+	multiple = 0
+	
+TANT QUE multiple != 10
+	AFFICHER(multiple * 2)
+	multiple = multiple + 1
+
+FIN
+
+
+
+
+int i = 0
+while(i != 10)
+{
+	System.out.println(2*i);
+	i++;
+}
+
+
+
+
+2. Reprenez l’algorithme du lanceur de balles de tennis et faites en sorte qu’il lance une balle
+tant que le stock n’est pas vide.
+
+
+stockDeBalles : entier
+
+DEBUT
+
+stockDeBalle = n
+
+SI(le joueur est pret et le panier est non vide)
+	Tant que (stockDeBalles != 0)
+		lancerBalle
+		et diminuer stockDeBalle de 1
+
+FIN
+
+
+
+int stock = n;
+
+if(pret == 1 && panierVide == 0)
+{
+	while(stock != 0)
+	{
+		lancerBalle();
+		n--;
+	}
+	panierVide = 1;
+}
+
+
+
+3. À l’aide de deux boucles, afficher les tables de multiplication de 1 à 9. Ensuite, coder votre
+algorithme en C#.
+
+table, multiple : entier
+
+DEBUT
+	Tant que(table != de 10)
+		mutliple = 0
+		Tant que(multiple != 10)
+			Afficher(table * multiple)
+			multiple = multiple + 1
+
+		table = table + 1
+
+FIN
+
+
+
+
+
+int compteur1 = -1, compteur2; 
+
+while(++compteur1 != 9)
+{
+	compteur2 = -1;
+	while(++compteur2 != 9)
+		System.out.println(compteur1 +" * "+ compteur2 + " = " + compteur1 * compteur2);
+}
+
+
+4. Réfléchissez à des idées d'amélioration de notre distributeur de boissons maintenant que
+nous connaissons les boucles.
+
+
+
+Utilisateur choisit un numero de boisson
+SI(stock de boisson non vide)
+	Donner la boisson
+SINON 
+	Tant que(stock boisson vide)
+		demander de choisir une autre boisson 
+
+
+5. Réalisez un système de connexion à l'aide d'un mot de passe. L'algorithme demande à
+l'utilisateur de saisir son mot de passe. Si ce dernier valide de bon mot de passe, on le salue.
+Par contre, si il fait une erreur trois fois de suite, un message lui signalera que son compte est
+bloqué et il ne pourra pas réessayer une quatrième fois
+
+DEBUT
+
+compteurErreur = 0
+situation = vrai
+
+
+
+Verifier(si mot de passe entré, correspond au mot de passe enregistré dans la base de donnée)
+
+Tantque(situation = vrai et compteurErreur != 3)	
+	Afficher(entrer votre nom d'utilisateur)
+	Afficher(entrer votre mot de passe)
+
+	SI(MDP_Entre = MDP_BaseDonnee)
+		laisserEntrerUtilisateur
+	SINON
+		afficherErreur
+		compteurErreur = compteurErreur + 1
+		SI(compteurErreur = 3)
+			bloquerCompte
+			Afficher(3 erreurs successives ont conduit au blocage du compte)
+
+FIN
+
+
+
+6. Réalisez un algorithme qui demande un nombre à l'utilisateur et affiche autant de ligne que
+le nombre spécifié par l'utilisateur.
+Exemple : l'utilisateur a rentré le nombre 5 et l'algorithme affiche :
+*
+**
+***
+****
+*****
+
+nombre = nombre entré par l'utilisateur
+etape = 0
+compteur = 0 
+while(etape++ != nombre)
+{
+	compteur = 0;
+	while(compteur++ < etape)
+		System.out.println("*");
+}
+
+
+7. Réalisez le jeu du Plus ou Moins.
+L'ordinateur choisi un nombre aléatoirement entre 1 et 100. L'utilisateur est invité à entrer un
+nombre et l'algorithme nous répond "C'est plus" ou "C'est moins". Lorsqu'on a trouvé le bon
+nombre, l'algorithme affiche le nombre de tentatives effectuées pour trouver le résultat.
+
+
+DEBUT
+
+int 	nombreRandom = nombre généré aléatoirement
+bool 	reponseCorrecte = faux
+
+while(reponseCorrecte = faux)
+	Afficher(veuillez entrer un nombre)
+	nombreChoisi = Récuperer l'entrée de l'utilisateur	
+	SI(nombreChoisi = nombreRandom)
+		Afficher("bravo vous avez deviné")
+		reponseCorrecte = vrai
+	SINON
+		Afficher("Ce n'est pas le bon numero, veuillez reessayer ")		
+FIN
+
+
+
+
+8. Ecrire un algorithme qui demande à l’utilisateur de taper 10 entiers et qui affiche le plus petit
+de ces entiers.
+
+DEBUT
+
+	compteur = 0 : entier
+	minimum : entier
+	recup : entier
+
+	Afficher("veuillez entrer 10 entiers différents")
+
+	while(compteur++ != 10)
+	{
+		recup = valeurRecuperee
+		SI(valeurRecuperee < 0 )
+		    recup = valeurRecuperee
+	}
+	Afficher(recup)
+
+
+FIN
+
+
+
+
+
+9. Algorithme demandant 3 nombres : nbRep, nbTiret, nbEspace. Ce dernier affiche à l'écran
+autant de tiret que la valeur de nbTiret, suivi d'autant d'espace que la valeur de nbEspace. Le
+tout autant de fois que la valeur de nbRep.
+Exemple : si nbRep = 2, nbTiret = 1 et nbEspace = 3 le résultat est le suivant :
+|- - |
+
+
+compteur : entier
+
+Afficher("Veuillez entrer le nombre de répétition souhaitée ")
+Recuperer(nbRep)
+
+Afficher("Veuillez entrer le nombre de tiret souhaité ")
+Recuperer(nbTiret)
+
+Afficher("Veuillez entrer le nombre d'espace souhaité ")
+Recuperer(nbEspace)
+
+
+Afficher("|")
+while(nbRep-- != 0)
+{
+	compteur = 0;
+	while(compteur++ < nbTiret  )
+		Afficher('-')
+	compteur = 0;
+	while(compteur++ < nbEspace  )
+		Afficher(' ')
+	
+}
+
+Afficher("|")
+
+
+
+Les structures itératives (2)
+1. À l’aide d’une boucle Faire… Jusqu’à, améliorez l’algorithme du distributeur de boissons pour
+qu’il demande au client s’il désire une autre boisson (jusqu’à ce qu’il n’en ait plus envie).
+3 Algorithmique : Exercices - CogniTICAlgorithmique : Exercices 2015
+2. À l’aide d’une boucle Faire… TantQue, améliorez l’algorithme de la calculatrice afin qu’elle
+demande à l’utilisateur s’il veut faire un autre calcul (tant qu’il le désire).
+3. À l’aide de la boucle de votre choix, réaliser un algorithme calculant le résultat de N
+10
+. N étant
+un nombre saisi par l’utilisateur.
+4. Reprenez l’exercice précédent et modifiez le pour que l’utilisateur entre également l’exposent
+qu’il désire calculer.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+on appelle une methode qu'on a pas encore déclarer, on lui passer des parameteres
+===> ALT + ENTER ==> creer la méthode
+
+
+refactoriser, modifier des noms de variables, des données
+==> shitf + F6
+
+
+**générer automatiquement les getters et les setters à partir des variables
+==> select Code | Generate Alt+Insert
+ to open the popup menu with available constructs that you can generate.**

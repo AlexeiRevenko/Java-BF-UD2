@@ -1,0 +1,40 @@
+pwd 		- gives current working directory
+mv text.file  ~/IdeaProjects/ExercicesA	- creates a copy of the file in the specified location
+rm -r folderName			- deletes a folder and all the files   
+
+
+==================================
+windows commands
+
+rmdir /s folderName	-deletes a folder and all its subfolders
+
+
+
+
+
+
+Step 1: Check if ssh client is installed
+
+ssh
+
+Step 2: Create Your SSH Key Pair
+
+ssh-keygen -t RSA -b 4096 -C "alexei.revenko.lab@gmail.com"
+
+
+These keys are store by default in:
+
+C:\Users\WINUSER/.ssh/id_rsa.pub
+C:\Users\WINUSER/.ssh/id_rsa
+
+just press enter to get a simple location result
+
+
+puis on active le ssh-agent
+
+eval $(ssh-agent -s)
+
+ssh-add ~/.ssh/id_rsa    ====> on dit au système que l'on veut utiliser cette clé rsa là.
+
+clip < ~/.ssh/id_rsa.pub ====> on copie la clé publique rsa dans le clipboard (même chose qu'ouvrir le fichier et faire ctrl + C)
+

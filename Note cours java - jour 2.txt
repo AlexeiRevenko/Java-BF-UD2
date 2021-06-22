@@ -1,0 +1,64 @@
+### Jour 2
+
+
+Attention lorsque on declare une variable dans une boucle ==> 
+Une nouvelle variable est à chaque fois crée dans la mémoire avec le même nom
+
+## générer un nombre aléatoire entre 0 et 10
+
+'''import java.util.Random;
+
+int randInteger;
+int upperLimit = 10;
+...
+
+Random rd = new Random();
+entierAleatoire = rd.nextInt(upperLimit)
+
+'''
+
+
+## Les tableaux
+Les tableaux ne sont pas dynamiques en java, si on a besoin d'un tablau plus grand que celui déjà initialisé
+alors il faudra en recréer un autre !! ATTENTION les tableaux sont typés.
+
+
+
+
+int[] tableau = new int[3];
+int[0] = 5;
+int[1] = 2;
+int[2] = -8;
+ou
+string[] tableau = {"element1","element2", "element3"};
+
+
+nomTableau.length  ==> pp que possède chaque tableau
+
+
+##parcourir un tableau
+'''for(int i = 0; i < nomTableau.length; i++)
+{
+ System.out.println(nomTableau[i]);
+}'''
+
+
+'''for(String element : nomTableau)
+{
+ System.out.println(element);
+}'''
+
+attention dans la deuxième methode ==> c'est une opération de "lecture"
+on ne peut pas modifier les éléments du tableau et travailler dessus
+
+
+Les collections sont dynamiques, on peut ajouter et supprimer des elements.
+
+
+
+
+
+## sous programme
+Une prodédure ne retourne rien par définition
+
+Une méthode retourne qqch

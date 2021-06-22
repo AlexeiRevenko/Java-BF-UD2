@@ -1,0 +1,145 @@
+Langage interpreté : tout les langages balisés, traduit directement ligne par ligne , en temps réel
+			
+Langage compilé : un programme compilateur, va analyser le code dans l'ensemble et le transformer en langage compréhensible pour l'ordinateur.
+Peut générer des erreurs.
+
+important d'avoir la bonne JVM java vrtual machine, en fonction de la machine/du systeme dexploitation que l'on utilise.
+
+
+
+javac    commande à executer sur notre fichier .java pour le compiler
+
+
+java se   	= java standart eddition, language java de base
+java ee		= java pour le dveloppement web
+
+
+important => garbage collector/ramasse miette ==> permet de gérer/organiser certains éléments de la mémoire
+
+Md;_}jJR&Gr[8^Qe
+
+concepts orienté objet sont universel dans tous les langages poo ==> encapsulation,héritage, polymorphisme
+
+applets : petits progammes / scripts incorporées dans les pags webs
+
+applications mobiles Java ME (mobile edition)
+
+sites web dnamique Java EE (entreprise edition)
+
+si on installe manuellement le jdk(pas par l'IDE), il faudra modifier les variables d'environnement
+==> env ==> modifier les variables d'environnements ==> PATH 
+
+
+Lors de la création de projet on doit mettre
+- nom de projet
+- localisation du projet sur dique
+- nom du package, qui est une arborescence physique pour organiser la localisation des fichiers du projet
+
+
+la surcharge de méthode fonction : appeler une même méthode mais avec des paramêtres différents d'entrées.
+(en gros c'est des méthodes != mais qui s'appellent de la même manière ==> font des choses différentes selon les paramètres passés à la fonction)
+
+
+
+mode debugage ULRA IMPORTANT permet de voir étape par étape l'éxécution du code, lorsque le code s'exécute sans erreurs, mais que le code ne fait pas ce que l'on veut.
+
+
+apre compilation notre IDE va généré un fichier out, c'est le contenu compilé(BYTE CODE); ce sont les fihciers que nous allons déployer.
+Compréhensible par les JVM
+
+
+javac ==> converti fichier.java en fichier.jvm
+==========================================================================
+la classe Scanner est importée depuis le package java.util.Scanner
+Scanner permet de récupérer une entréee utilisateur
+
+Scanner scan =new Scanner(System.in);
+
+flux d'entrée depuis le clavier, 
+
+scan. toutes une série de méthodes différentes liées à l'object Scanner !!!!
+
+exemples
+
+scan.next();
+scan.nextInt();
+etc...
+recuperer un certains tpe de données
+et retourne également un certain type de données ==> que l'on peut récupérer
+
+String message = scan.next();
+System.out.println(mesage);
+
+
+==================================================================================
+String est une classe qui permet donc de créer des objets string est d'appeler des méthodes propres également
+
+
+long myLong = 456161661L;  rajoute un grand L à la fin
+float myFloat = 123.456F; rajoute un F à la fin, pour que le système considère ça comme un float
+
+
+Pour déclarer une constante en java on va utiliser le mot clé "final"
+
+constante doit toujours être initialiée immédiatement lors de sa déclaration
+convention, mettre en majuscule
+final int SPEED_OF_SOUND = 340;
+
+================================================================
+conversion de type de données
+
+conversion implicite
+de numérique en numérique
+tailles en bits inférieurs vers taille en bits supérieurs
+
+
+
+type numérique en string
+int i = 123;
+String s = String.valueOf(i); valueOf() a eu bcp de surcharge de méthode
+
+
+==========================================================================
+
+slide 54 
+
+byte b = Byte.parseByte(input)
+++Byte est une classe d'emballages(wrapper) qui en plus de pouvoir stocker une valuer, permet egalement toutes une série de fonctionnalités byte != Byte 
+++la methode parse permet de convertir la chaine de caracteres en type numerique
+++Integer. puis il y a toutes une série de méthodes disponibles ==> voir ide
+a tous types primitif il existe une classe d'emballage/wrapper qui contient toutes une série de fonctionnalités
+
+
+si on ne peut pas convertir/parse correctement, une exception/erreur va être indiquée
+
+==> exit code n'est plus 0, mais 1
+
+La question qu'on pourrait se poser c'est "comment est ce que l'on peut savoir qu'une methode va nous générer une erreur /une exception ?"
+Cette information peut se retrouver dans la documenation ==> par exemple : parseInt génère 
+Throws:
+NumberFormatException – if the string does not contain a parsable integer.
+
+========================================================================
+
+
+refactorisation
+changer toutes les variables identiques ==> shift + f6
+======================================================
+oracle university 
+
+https://education.oracle.com/fr/catalogue-de-produits-ouexam-pexam_1z0-819/pexam_1Z0-819
+
+
+===================================================
+
+raccourci ide intellIJ  ctrl + alt + L ===> permet d'indenter par défaut
+
+
+System.out.printf();  ===> tres utile pour les chaines de caracteres
+
+quand on passe des entiers(littéralement ecrire l'entier) en paramètres et que ces paramètres peuvent être considérés comme des bytes et que 
+ça doit être des bytes justement ! alors il faut caster car c'est par défaut considéré comme des entiers.
+
+medium.code ==> 5 particles par mois
+
+

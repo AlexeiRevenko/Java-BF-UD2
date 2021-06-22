@@ -1,0 +1,2 @@
+https://docs.github.com/en/get-started/getting-started-with-git/why-is-git-always-asking-for-my-password
+https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token
