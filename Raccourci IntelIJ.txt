@@ -9,3 +9,6 @@ refactoriser, modifier des noms de variables, des données
 **générer automatiquement les getters et les setters à partir des variables
 ==> select Code | Generate Alt+Insert
  to open the popup menu with available constructs that you can generate.**
+
+
+==> alt + insert ==> permet de check differents choses notamment , les methodes que l'on peut redefinir;

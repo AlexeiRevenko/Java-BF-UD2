@@ -10,13 +10,13 @@ public class MasterMind {
     public static final String RESET = "\033[0m";  // Text Reset
 
     // Background
-    public static final String BLACK_BACKGROUND = "\033[40m";  // BLACK
-    public static final String RED_BACKGROUND = "\033[41m";    // RED
-    public static final String GREEN_BACKGROUND = "\033[42m";  // GREEN
-    public static final String YELLOW_BACKGROUND = "\033[43m"; // YELLOW
-    public static final String BLUE_BACKGROUND = "\033[44m";   // BLUE
-    public static final String PURPLE_BACKGROUND = "\033[45m"; // PURPLE
-    public static final String CYAN_BACKGROUND = "\033[46m";   // CYAN
+    public static final String BLACK_BACKGROUND = "\033[0;100m";  // BLACK
+    public static final String RED_BACKGROUND = "\033[0;101m";    // RED
+    public static final String GREEN_BACKGROUND = "\033[0;102m";  // GREEN
+    public static final String YELLOW_BACKGROUND = "\033[0;103m"; // YELLOW
+    public static final String BLUE_BACKGROUND = "\033[0;104m";   // BLUE
+    public static final String PURPLE_BACKGROUND = "\033[0;105m"; // PURPLE
+    public static final String CYAN_BACKGROUND = "\033[0;106m";   // CYAN
     public static final String GREY_BACKGROUND = "\033[47m";  // WHITE
 
     public static void main(String[] args) {
@@ -58,7 +58,6 @@ public class MasterMind {
             compareMasterTabs(playerTab, genTab);
 
         }while(ok);
-
     }
 
     private static void compareMasterTabs(int[] player, int[] gen) {
@@ -70,7 +69,7 @@ public class MasterMind {
             already = (player[a] != gen[a]);
             colorAndPosition = (player[a] == gen[a] ? colorAndPosition + 1 : colorAndPosition );
 
-            for(int b = a ; b < player.length - a ; b++ )
+            for(int b = a ; b < player.length ; b++ )
                 color = (player[a] == gen[b] && already)? color + 1 : color ;
         }
         System.out.println("Couleur et position\t\t" +"Vos combinaisons\t\t" +"Uniquement position");
@@ -83,30 +82,14 @@ public class MasterMind {
         //affichage des couleurs entrées par l'utilisateur
         for (int k : player) {
             switch (k) {
-                case 1 :
-                    System.out.printf(BLACK_BACKGROUND + "\t" + RESET);
-                    break;
-                case 2 :
-                    System.out.printf(RED_BACKGROUND + "\t" + RESET);
-                    break;
-                case 3 :
-                    System.out.printf(GREEN_BACKGROUND + "\t" + RESET);
-                    break;
-                case 4 :
-                    System.out.printf(YELLOW_BACKGROUND + "\t" + RESET);
-                    break;
-                case 5 :
-                    System.out.printf(BLUE_BACKGROUND + "\t" + RESET);
-                    break;
-                case 6 :
-                    System.out.printf(PURPLE_BACKGROUND + "\t" + RESET);
-                    break;
-                case 7 :
-                    System.out.printf(CYAN_BACKGROUND + "\t" + RESET);
-                    break;
-                case 8 :
-                    System.out.printf(GREY_BACKGROUND + "\t" + RESET);
-                    break;
+                case 1 -> System.out.print(BLACK_BACKGROUND + "\t" + RESET);
+                case 2 -> System.out.printf(RED_BACKGROUND + "\t" + RESET);
+                case 3 -> System.out.printf(GREEN_BACKGROUND + "\t" + RESET);
+                case 4 -> System.out.printf(YELLOW_BACKGROUND + "\t" + RESET);
+                case 5 -> System.out.printf(BLUE_BACKGROUND + "\t" + RESET);
+                case 6 -> System.out.printf(PURPLE_BACKGROUND + "\t" + RESET);
+                case 7 -> System.out.printf(CYAN_BACKGROUND + "\t" + RESET);
+                case 8 -> System.out.printf(GREY_BACKGROUND + "\t" + RESET);
             }
         }
 
@@ -126,25 +109,14 @@ public class MasterMind {
         return true;
     }
 
-
-
-
-
-
-
-
     private static int[] generating(int taille)
     {
         int[] tableau = new int[taille];
         Random rdn = new Random();
         while (taille-- > 0)
             tableau[tableau.length - taille - 1] = rdn.nextInt(8);
-        System.out.println("Le tableau MasterMind secret a été généré !:");
+        System.out.println("Le tableau MasterMind secret a été généré !\n");
         return tableau;
     }
-
-
-
-
 
 }
