@@ -4,7 +4,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class InversionElemTableau {
     public static void main(String[] args) {
 
-        System.out.println("Quelle taille de tableau souhaitez vous avoir ?");
+        System.out.println("Quelle taille de tableau souhaitez-vous avoir ?");
         Scanner recup = new Scanner(System.in);
         int taille = recup.nextInt();
         int []tabAOrdonner = generate(taille);
