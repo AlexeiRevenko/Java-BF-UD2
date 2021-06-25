@@ -11,18 +11,18 @@ public class Epargne  extends Compte{
        super(numero, titulaire);
     }
 
-    public LocalDateTime getDatedernierRetrait() {
+    public LocalDateTime getDateDernierRetrait() {
         return datedernierRetrait;
     }
 
-    public void setDatedernierRetrait(LocalDateTime datedernierRetrait) {
+    public void setDateDernierRetrait(LocalDateTime datedernierRetrait) {
         this.datedernierRetrait = datedernierRetrait;
     }
 
     protected void retrait(double montant) {
         if (montant < this.solde /*+ this.ligneDeCredit*/) {
             this.solde -= montant;
-            this.setDatedernierRetrait(LocalDateTime.now());
+            this.setDateDernierRetrait(LocalDateTime.now());
             System.out.printf("Retrait de %10.2f EUR sur le compte %s %1 nouveau solde de %12.2f EUR \n", montant,this.getClass().getSimpleName().toUpperCase(),this.numero, this.solde);
             System.out.println(datedernierRetrait);
         } else {
