@@ -1,4 +1,6 @@
-package be.digitalcity.formation.banque;
+package be.digitalcity.formation.banqueEpargne;
+
+import be.digitalcity.formation.banque.Personne;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,7 +13,7 @@ public class Banque {
     //la logique c'est d'abord créer une banque, puis ensuite on va ajouter des comptes
 
     private String nomDeBanque;
-    private HashMap<String, Courant> listeDesComptes = new HashMap<>();
+    private final HashMap<String, Compte> listeDesComptes = new HashMap<>();
 
 
     public Banque(String nom){
@@ -26,10 +28,10 @@ public class Banque {
         this.nomDeBanque = nom;
     }
 
-    public void ajouter(Courant compte){
+    public void ajouter(Compte compte){
         //quand on fait des opérations avec des variables, attention à verifier le cas où l'objet et null
         if(compte != null){
-            System.out.println("Le compte : "+compte.getNumero() + " a été ajouté à la banque "+this.nomDeBanque);
+            System.out.println("Le compte "+ compte.getClass().getName()+" : "+compte.getNumero() + " a été ajouté à la banque "+this.nomDeBanque);
             System.out.println("Le titulaire de ce compte est \n- nom : "+ compte.getTitulaire().getPrenom() +"\n- prénom : "+compte.getTitulaire().getNom()+
                     "\n- date de naissance : "+compte.getTitulaire().getDateNaissance()+"\n");
             this.listeDesComptes.put(compte.getNumero(), compte);
@@ -47,7 +49,7 @@ public class Banque {
         // .err est le fl
     }
 
-    public Courant rechercheCompte(String numero){
+    public Compte rechercheCompte(String numero){
         if(numero != null)
             if(this.listeDesComptes.containsKey(numero))
                 return this.listeDesComptes.get(numero);
@@ -67,7 +69,7 @@ public class Banque {
         double total = 0;
         //quand on vera les exceptions ==> on pourra
         if(titulaire != null)
-            for(Map.Entry<String, Courant> entry : listeDesComptes.entrySet())
+            for(Map.Entry<String, Compte> entry : listeDesComptes.entrySet())
                 if(titulaire.getPrenom().equals(entry.getValue().getTitulaire().getPrenom()) && titulaire.getNom().equals(entry.getValue().getTitulaire().getNom())&& entry.getValue().getSolde() >= 0)
                     total = total + entry.getValue().getSolde();
         return total;
@@ -82,7 +84,7 @@ public class Banque {
         byte compteur = 0;
         if(titulaire != null){
             double totalAvoir = 0;
-            for(Courant compte : this.listeDesComptes.values())
+            for(Compte compte : this.listeDesComptes.values())
                 if(compte.getTitulaire().equals(titulaire))
                     if(compte.getSolde() > 0)
                         totalAvoir += compte.getSolde();

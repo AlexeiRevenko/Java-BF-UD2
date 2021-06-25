@@ -1,30 +1,46 @@
-package be.digitalcity.formation.banque;
+package be.digitalcity.formation.banqueEpargne;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
-public class Personne {
-    //classe personne défini un type personne
+public class Person {
+
+    //classe Person défini un type Person
 
     private String nom;
     private String prenom;
     private LocalDate dateNaissance;
 
-    private Personne() {
+    private Person() {
 
     }
 
-    public Personne(String nom) {
+    public Person(String nom) {
         this.nom = nom;
     }
 
-    public Personne(String nom, String prenom) {
+    public Person(String nom, String prenom) {
         this.nom = nom;
         this.prenom = prenom;
     }
 
-    public Personne(String nom, String prenom, LocalDate date) {
+    public Person(String nom, String prenom, LocalDate date) {
         this(nom, prenom);
         this.dateNaissance = date;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return nom.equals(person.nom) && prenom.equals(person.prenom) && dateNaissance.equals(person.dateNaissance);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nom, prenom, dateNaissance);
     }
 
     public void setNom(String nom) {
@@ -51,3 +67,7 @@ public class Personne {
         return nom;
     }
 }
+
+
+
+
